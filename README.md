@@ -52,4 +52,4 @@ lambdadb info
 
 ## Example
 
-!(Demo)[assets/demo.gif]
+![Demo](assets/demo.gif)
