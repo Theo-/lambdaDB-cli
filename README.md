@@ -1,4 +1,4 @@
-![LambdaDB](assets/headerTitle.png)
+![LambdaDB](assets/header.png)
 
 ### Install
 
