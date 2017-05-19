@@ -50,6 +50,14 @@ To get your SQL credentials just type:
 $ lambdadb info
 ```
 
+### Deploying a `lambdadb.json` project
+
+Just do:
+
+```
+$ lambdadb deploy
+```
+
 ## Example
 
 ![Demo](assets/demo.gif)

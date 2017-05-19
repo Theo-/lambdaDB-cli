@@ -1,0 +1,5 @@
+{
+    "name": "test_db_init",
+    "type": "database",
+    "tables": []
+}

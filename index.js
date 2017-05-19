@@ -9,7 +9,8 @@ var signUp = require('./src/signup.js'),
     listDatabase = require('./src/list-database.js'),
     deleteDatabase = require('./src/delete-database.js'),
     init = require('./src/init.js'),
-    info = require('./src/info.js');
+    info = require('./src/info.js'),
+    deploy = require('./src/deploy.js');
 
 program
 .command('signup')
@@ -25,6 +26,11 @@ program
 .command('login')
 .description('Login to LambdaDB')
 .action(login)
+
+program
+.command('deploy')
+.description('Deploys a lambdadb.json file inside a project')
+.action(deploy)
 
 program
 .command('new <databasename>')
