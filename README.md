@@ -47,9 +47,40 @@ $ lambdadb list
 To get your SQL credentials just type:
 
 ```
-lambdadb info
+$ lambdadb info
 ```
 
 ## Example
 
 ![Demo](assets/demo.gif)
+
+### Using a LambdaDB in your code
+
+```js
+var lambdaDB = require('lambdadb')({
+    host: 'https://lambdadb.herokuapp.com',
+    secretToken: 'my secret token',
+    database: 'microservice'
+})
+
+// Easily insert into tables
+lambdaDB.table('users').insert({
+    username: 'user',
+    password: 'pass'
+}).then(function(response) {
+    console.log(response.data) // => logging the trace of the SQL query 
+})
+
+// Describe tables
+lambdaDB.table('users').describe().then(function(response) {
+    console.log(response.data) // => logging the structure of the database
+})
+
+// Do raw operations on your database
+lambdaDB.raw('SELECT * FROM users').then(function(response) {
+    console.log(response.data) // => logging the rows
+})
+
+```
+
+Visit the [LambdaDB client repository](https://github.com/Theo-/lambdaDB-client) to get started.
