@@ -8,7 +8,8 @@ var signUp = require('./src/signup.js'),
     parseTemplate = require('./src/parse-template.js'),
     listDatabase = require('./src/list-database.js'),
     deleteDatabase = require('./src/delete-database.js'),
-    init = require('./src/init.js');
+    init = require('./src/init.js'),
+    info = require('./src/info.js');
 
 program
 .command('signup')
@@ -16,7 +17,12 @@ program
 .action(signUp)
 
 program
-.command('login <token>')
+.command('info')
+.description('Account info such as SQL credentials')
+.action(info)
+
+program
+.command('login')
 .description('Login to LambdaDB')
 .action(login)
 

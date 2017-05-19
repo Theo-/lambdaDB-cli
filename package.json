@@ -1,6 +1,6 @@
 {
   "name": "lambdadb-cli",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -19,6 +19,7 @@
     "commander": "^2.9.0",
     "inquirer": "^3.0.6",
     "lambdadb": "^1.0.0",
+    "request": "^2.81.0",
     "underscore": "^1.8.3"
   }
 }
