@@ -14,7 +14,7 @@ module.exports = function() {
       name: 'dbname',
       type: 'input',
       default: null,
-      message: 'Name of your project (will also be the name of the database)',
+      message: 'Name of the database',
       validate: function( value ) {
         if (value.length) {
           return true;

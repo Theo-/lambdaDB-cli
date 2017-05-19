@@ -1,16 +1,28 @@
 var colors = require('colors'),
     LambdaDB = require('./lambdadb.js'),
-    _ = require('underscore');
+    _ = require('underscore'),
+    Table = require('cli-table2'),
+    chalk = require('chalk');
 
 module.exports = function() {
     var ldb = LambdaDB();
-    console.log("DATABASES:")
+    console.log(chalk.bold("Database from your LambdaDB account:"))
 
-    ldb.database().list().then(function(dbs) {
+    var table = new Table({
+        head: ['Name', 'Host', 'Privileges'],
+        colWidths: [30, 10, 20]
+    })
+
+    ldb.databases().then(function(dbs) {
         _.each(dbs.data, function(db) {
-            console.log(colors.green(db.Db+":"));
-            console.log('\t host: '+db.Host);
-            console.log('\t privileges: ALL but GRANT')
+            table.push(
+                [db.Db, db.Host, 'ALL but GRANT']
+            )
         });
+
+        console.log(table.toString());
+
+        console.log('Delete a table using ' + chalk.underline('lambdadb delete <name>'))
+        console.log('Create a new table using ' + chalk.underline('lambdadb new <name>'))
     })
 }
