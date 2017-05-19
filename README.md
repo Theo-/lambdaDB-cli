@@ -72,7 +72,7 @@ lambdaDB.table('users').insert({
 })
 
 // Describe tables
-lambdaDB.table('users').describe().then(function(response) {
+lambdaDB.users.describe().then(function(response) {
     console.log(response.data) // => logging the structure of the database
 })
 
