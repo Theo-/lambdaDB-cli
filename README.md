@@ -11,13 +11,13 @@ $ npm install -g lambdadb-cli
 First, you need to sign up to LambdaDB:
 
 ```
-lambdadb signup
+$ lambdadb signup
 ```
 
 Or, if you already have an account, sign in using:
 
 ```
-lambdadb login
+$ lambdadb login
 ```
 
 ### Creating a database
@@ -25,21 +25,31 @@ lambdadb login
 You can create a database using:
 
 ```
-lambdadb new <database name>
+$ lambdadb new <database name>
 ```
 
 Then you can desctroy it whenever you want with
 
 ```
-lambdadb delete <database name>
+$ lambdadb delete <database name>
 ```
 
 ### Listing database
 
 See all your database using:
 
-```bash
-lambdadb list
+```
+$ lambdadb list
 ```
 
-## Examples:
+### Accessing your database through a SQL client
+
+To get your SQL credentials just type:
+
+```
+lambdadb info
+```
+
+## Example
+
+!(Demo)[assets/demo.gif]
